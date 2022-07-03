@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <title>VahedHelper</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div id="landing" class="glass">
+      <div class="">
+        <textarea id="input" name="input" rows="8" placeholder="اطلاعات را اینجا کپی کنید"></textarea>
+        <button type="button" name="button" onclick="init()">تایید</button>
+      </div>
+    </div>
+    <div id="STORAGE">
+      
+    </div>
+    <h1>VahedHelper | واحد یار</h1>
+    <article class="glass">
+      <section id="timeTable" onmousemove="removeTemps();">
+
+        <div class="day hours">
+          <div class="header">
+            &nbsp;
+          </div>
+          <div class="column">
+  7 <br> 8 <br> 9 <br> 10 <br> 11 <br> 12 <br> 13 <br> 14 <br> 15 <br> 16 <br> 17 <br> 18 <br> 19 <br> 20 <br> 21
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="header">
+            شنبه
+          </div>
+          <div class="column 0">
+
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="header">
+            یک شنبه
+          </div>
+          <div class="column 1">
+
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="header">
+            دو شنبه
+          </div>
+          <div class="column 2">
+
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="header">
+            سه شنبه
+          </div>
+          <div class="column 3">
+
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="header">
+            چهار شنبه
+          </div>
+          <div class="column 4">
+
+          </div>
+        </div>
+
+        <div class="day">
+          <div class="header">
+            پنج شنبه
+          </div>
+          <div class="column 5">
+
+          </div>
+        </div>
+      </section>
+
+      <aside dir="ltr">
+        <input dir="rtl" id="search" type="text" name="search" placeholder="جست و جو کنید" disabled>
+        <ul id="list" dir="rtl">
+          <li>درسی وارد نشده</li>
+        </ul>
+      </aside>
+    </article>
+    <section class="">
+      <table class="glass rightPart">
+        <thead>
+          <tr>
+            <th>اسم درس</th>
+            <th>کد درس</th>
+            <th>استاد</th>
+            <th>واحد(کل)</th>
+            <th>واحد(عملی)</th>
+            <th>امتحان</th>
+          </tr>
+        </thead>
+        <tbody id="selectedLessons">
+          <tr id="notSelected"><td colspan="6">درسی انتخاب نشده است</td></tr>
+        </tbody>
+      </table>
+      <div class="leftPart">
+        <div class="glass about">
+          *
+          اطلاعات شما در سرور ذخیره نمیشود و در صورت بستن یا بارگزاری مجدد صفحه
+          <span dir="ltr">(refresh)</span>
+          اطلاعات شما از بین میروند .
+        </div>
+        <div class="glass reset" onclick="refreshPage()">شروع مجدد</div>
+      </div>
+    </section>
+    <footer class="glass" dir="ltr">
+      Brought to you by <a href="https://github.com/KAYT33N">KAYT33N</a>
+    </footer>
+    <script src="assets/scripts.js" charset="utf-8"></script>
+    <a style="display:none;" href="https://regex101.com/r/q2BDng/1">class regex</a>
+    <a style="display:none;" href="https://regex101.com/r/PjSXbA/1">final regex</a>
+  </body>
+</html>
