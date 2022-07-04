@@ -3,3 +3,6 @@ v0.1.0
     * Hover on lessons to see a temporary view  of lessons in time-table
     * Click on lessons to have them in both time-table and footers all-selected-lessons table
     * Click on 'x' sign on top of events or their row on footer table to close the lesson
+v0.1.0
+  katy:
+    * added Git-hub repo link
