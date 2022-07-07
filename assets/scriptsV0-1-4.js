@@ -63,21 +63,12 @@ function init() {
       classes: classes,
       final: final,
       place: item.childNodes[23].innerHTML,
-      requirement: item.childNodes[25],
-      other: item.childNodes[27]
+      requirement: item.childNodes[25].innerHTML,
+      other: item.childNodes[27].innerHTML
     });
   });
   //filling ul list
-  const list = document.getElementById('list');
-  list.innerHTML = '';
-  lessons.forEach((item, i) => {
-    let ele = document.createElement('li');
-    ele.innerHTML = item.name;
-    ele.id = keys[i];
-    ele.addEventListener('mouseenter',hover);
-    ele.addEventListener('click',select);
-    list.appendChild(ele);
-  });
+  createList();
   //mapping
   for(let i = 0; i < keys.length; i++){
         lesson.set(keys[i], lessons[i]);
@@ -132,7 +123,12 @@ function refreshSelected() {
   for (var i = 0; i < selected.length; i++) {
     let data = lesson.get(selected[i]);
     let row = document.createElement('tr');
-    row.innerHTML = "<td>"+data.name+"</td>" + "<td>"+data.code+"</td>" + "<td>"+data.teacher+"</td>" + "<td>"+data.vahedTotal+"</td>" + "<td>"+data.vahedAmali+"</td>" + "<td>"+data.final+"</td>";
+    row.innerHTML = "<td>"+data.name+"</td>" +
+      "<td>"+data.code+"</td>" +
+      "<td>"+data.teacher+"</td>" +
+      "<td>"+data.vahedTotal+"</td>" +
+      "<td>"+data.vahedAmali+"</td>" +
+      "<td>"+data.final+"</td>";
     row.classList.add('c'+data.code.replace(/_/, "-"));
     row.addEventListener('click',deSelect);
     table.appendChild(row);
@@ -165,4 +161,26 @@ function refreshPage() {
     location.reload();
   }
   return false ;
+}
+
+function createList(string = ''){
+  const list = document.getElementById('list');
+  let matchFound = false;
+  list.innerHTML = '';
+  lessons.forEach((item, i) => {
+    if ((item.name).match(string)) {
+      let ele = document.createElement('li');
+      ele.innerHTML = item.name;
+      ele.id = keys[i];
+      ele.addEventListener('mouseenter',hover);
+      ele.addEventListener('click',select);
+      list.appendChild(ele);
+      matchFound = true;
+    }
+  });
+  if (!matchFound) {
+    let ele = document.createElement('li');
+    ele.innerHTML = 'موردی یافت نشد';
+    list.appendChild(ele);
+  }
 }
